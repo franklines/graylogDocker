@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+    graylog:
+        image: fescobar94/graylog:latest
+        ports:
+            - 9000:9000
+        environment:
+            GRAYLOG_PASS: "admin123"
+            ES_INFO: "http://elasticsearch:9200"
+            MONGO_INFO: "graylog:pass123@mongodb"
+        depends_on:
+            - elasticsearch
+            - mongodb
+        networks:
+            - graynet
+    mongodb:
+        image: bitnami/mongodb:latest
+        environment:
+            MONGODB_ROOT_PASSWORD: "root123"
+            MONGODB_USERNAME: "graylog"
+            MONGODB_PASSWORD: "pass123"
+            MONGODB_DATABASE: "graylog"
+        networks:
+            - graynet
+    elasticsearch:
+        image: elasticsearch:6.8.6
+        environment:
+            discovery.type: "single-node"
+        networks:
+            - graynet
+
+networks:
+    graynet:
+        driver: bridge
