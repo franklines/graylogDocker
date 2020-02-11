@@ -8,10 +8,10 @@ The following repo hosts a Docker image for Graylog 3.2 using Ubuntu 20.04 as th
 You can set any of the following environmental values to configure your Graylog container.
 | Environment Variable | Value |
 | ------ | ------ |
-| GRAYLOG_PASS | <Password for admin user> |
-| ES_INFO | <ElasticSearch endpoint> |
-| MONGO_INFO | <MongoDB partial string> |
-| HTTP_BIND | <HTTP bind port> |
+| GRAYLOG_PASS | Password for admin user |
+| ES_INFO | ElasticSearch endpoint |
+| MONGO_INFO | MongoDB partial string |
+| HTTP_BIND | HTTP bind port |
 
 **NOTE:** If `GRAYLOG_PASS` is not set, a random admin password will be generated and stored in:
 `/var/log/graylog-server/tmp-pass.log`. 
