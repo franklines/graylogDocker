@@ -1,4 +1,4 @@
-# Graylog Docker Image built on Ubuntu 20.04 base
+# Graylog Docker Image built on Ubuntu 20.04 base image
 
 [![N|Solid](https://i.imgur.com/O01MUnd.png)](https://hub.docker.com/repository/docker/fescobar94/graylog)
 
