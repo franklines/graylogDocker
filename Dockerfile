@@ -11,9 +11,8 @@ RUN apt-get update && \
     wget 
 
 RUN wget https://packages.graylog2.org/repo/packages/graylog-3.2-repository_latest.deb -O /root/graylog-3.2-repository_latest.deb && \
-    dpkg -i /root/graylog-3.2-repository_latest.deb
-
-RUN apt-get update && \
+    dpkg -i /root/graylog-3.2-repository_latest.deb && \
+    apt-get update && \
     apt-get install -y graylog-server
 
 COPY docker-entrypoint.sh /usr/local/bin/
