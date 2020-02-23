@@ -7,6 +7,7 @@ RUN apt-get update && \
     apt-transport-https \
     openjdk-8-jre-headless \
     uuid-runtime \
+    libdigest-sha-perl \
     pwgen \
     wget 
 
